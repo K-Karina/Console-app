@@ -16,5 +16,17 @@ for (let i = 0; i < 2; i++) {
       ""
     ),
     lastWatchedMovieAssess1 = +prompt("На сколько оцените его?", "");
-  personalMovieDB.movies[lastWatchedMovie1] = lastWatchedMovieAssess1;
-}
+
+  if (
+    lastWatchedMovie1 != null &&
+    lastWatchedMovieAssess1 != null &&
+    lastWatchedMovie1 != "" &&
+    lastWatchedMovieAssess1 != "" &&
+    lastWatchedMovie1.length < 50 &&
+    lastWatchedMovieAssess1 < 50
+  ) { personalMovieDB.movies[lastWatchedMovie1] = lastWatchedMovieAssess1;
+    console.log('done');
+  } else {
+    console.log('error');
+    i--;
+  } 
